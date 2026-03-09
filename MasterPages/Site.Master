@@ -21,6 +21,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
             background: #121212;
             padding: 20px 40px;
             min-height: 60px;
