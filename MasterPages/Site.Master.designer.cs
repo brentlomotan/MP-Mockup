@@ -15,13 +15,13 @@ namespace GROUP01_MP_Mockup
     {
 
         /// <summary>
-        /// HeadContent control.
+        /// LogoImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Image LogoImage;
 
         /// <summary>
         /// MainContent control.
