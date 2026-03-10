@@ -7,47 +7,56 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GROUP01_MP_Mockup
+namespace GROUP01_MP_Mockup.Pages.Auth
 {
 
 
-    public partial class SiteMaster
+    public partial class Signup
     {
 
         /// <summary>
-        /// LogoImage control.
+        /// txtSignupUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image LogoImage;
+        protected global::System.Web.UI.WebControls.TextBox txtSignupUsername;
 
         /// <summary>
-        /// HomeTab control.
+        /// txtSignupPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HomeTab;
+        protected global::System.Web.UI.WebControls.TextBox txtSignupPassword;
 
         /// <summary>
-        /// ProjectsTab control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ProjectsTab;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
 
         /// <summary>
-        /// MainContent control.
+        /// lblSignupMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblSignupMessage;
+
+        /// <summary>
+        /// btnSignup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSignup;
     }
 }
