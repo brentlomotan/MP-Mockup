@@ -95,7 +95,7 @@
 
     .footer-bio {
         font-style: oblique;
-        font-size: 8rem;
+        font-size: 10rem;
         color: #F7F8F0;
         line-height: 2.0;
         margin-top: 40vh;
