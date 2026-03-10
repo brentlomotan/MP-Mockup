@@ -13,21 +13,5 @@ namespace GROUP01_MP_Mockup.Pages.Auth
         {
 
         }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
-            {
-                Session["User"] = txtUsername.Text;
-                Response.Redirect("~/Pages/Landing/Default.aspx");
-            }
-            else
-            {
-                lblLoginMessage.Visible = true;
-            }
-
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-        }
     }
 }

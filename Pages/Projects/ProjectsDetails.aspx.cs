@@ -11,7 +11,7 @@ namespace GROUP01_MP_Mockup.Pages.Projects
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
