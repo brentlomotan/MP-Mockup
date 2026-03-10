@@ -10,23 +10,134 @@
 
     <style>
         body {
-            margin: 0;
-            font-family: Arial;
-            background: #1e1e1e;
-            color: #e0e0e0;
+            margin:0;
+            font-family:Arial;
+            background:#AED3EF; /* MAIN BG COLOR */
+            color:#355872; /* MAIN FONT COLOR */
         }
 
         /* HEADER */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            background: #121212;
-            padding: 20px 40px;
-            min-height: 60px;
-            border-bottom: 1px solid #2f2f2f;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            position:sticky;
+            top:0;
+            background:#F7F8F0; /* HEADER BG COLOR */
+            padding:20px 40px;
+            min-height:80px;
+            margin-top:15px;
+            z-index: 10;
+        }
+
+        /* NAV BAR */
+        .nav-bar{
+            display:flex;
+            align-items:stretch;
+            height:100%;
+        }
+
+        /* TAB */
+        .bar-item{
+            position:relative;
+            overflow:hidden;
+
+            display:flex;
+            align-items:center;
+
+            padding:0 22px;
+            height:80px;
+
+            text-decoration:none;
+            font-weight:600;
+            color:#355872;
+            background:transparent;
+
+            border-radius:10px 10px 0 0;
+            overflow: visible;
+        }
+
+        /* TEXT */
+        .bar-item span{
+            position:relative;
+            z-index:2;
+            font-size:24px;
+        }
+
+        /* FLUID */
+        .bar-fluid{
+            position:absolute;
+            top:-20px;
+            left:0;
+            width:100%;
+            height:0;
+            background:#AED3EF;
+            border-radius:8px;
+            z-index: 1;
+        }
+
+        /* DROP */
+        .drop{
+            position:absolute;
+            top:-25px;
+            left:50%;
+            width:5px;
+            height:5px;
+            background:#AED3EF;
+            border-radius:50%;
+            transform:translateX(-50%);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* ACTIVE TAB */
+        .bar-item.active span{
+            animation:textpop 0.35s ease forwards;
+            animation-delay:0s;
+        }
+
+        .bar-item.active .bar-fluid {
+            animation: fluid 0.6s ease-out forwards;
+        }
+
+        .bar-item.active .drop {
+            animation: drop 0.6s ease-in-out forwards;
+            animation-delay: 0s; 
+            animation-fill-mode: forwards;
+        }
+
+        /* FLUID SHAPE */
+        .bar-fluid:before,
+        .bar-fluid:after{
+            content:'';
+            position:absolute;
+            top:0;
+            width:110%;
+            height:200%;
+            background:#F7F8F0;
+            border-radius:50%;
+        }
+        .bar-fluid:before{ left:-50%; }
+        .bar-fluid:after{ right:-50%; }
+
+        /* ANIMATIONS */
+        @keyframes fluid{
+            0% { height: 0; }
+            40% { height: 40px; } 
+            70% { height: 30px; }   
+            100% { height: 0; }
+        }
+
+        @keyframes drop{
+            0% { top: -25px; opacity: 1; }
+            80% { top: 30px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+
+        @keyframes textpop{
+            0% { transform:scale(1); color:#355872; }
+            50% { transform:scale(1.2); }
+            100% { transform:scale(1.15); color:#2f6fa3; }
         }
 
         /* LEFT SIDE */
@@ -34,23 +145,15 @@
             display: flex;
             gap: 30px;
             align-items: center;
-        }
-
-        .nav-left a {
-            text-decoration: none;
-            color: #e0e0e0;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        .nav-left a:hover {
-            color: #ffffff;
+            position: relative;
         }
 
         .logo {
             color: white;
             font-weight: bold;
-            height: 60px;
+            height: 80px;
+            z-index: 2;
+            position: relative;
         }
 
         /* RIGHT SIDE */
@@ -61,7 +164,7 @@
         }
 
         .login-btn {
-            background: #3a3a3a;
+            background: #7AAACE; 
             padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
@@ -70,7 +173,8 @@
         }
 
         .login-btn:hover {
-            background: #4a4a4a;
+            background: #84b7dd;
+            transition: 0.3s;
         }
 
         /* PAGE CONTENT */
@@ -82,21 +186,28 @@
 
 <body>
     <form runat="server">
-
-        <!-- HEADER -->
         <div class="header">
-
             <!-- LEFT SIDE - LOGO & TABS -->
             <div class="nav-left">
                 <asp:Image
                     ID="LogoImage"
                     runat="server"
                     CssClass="logo"
-                    ImageUrl="~/Images/logo.png"
-                    />
+                    ImageUrl="~/Images/Logo.png"
+                />
+                <div class="nav-bar">
+                    <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
+                        <div class="bar-fluid"></div>
+                        <div class="drop"></div>
+                        <span>Home</span>
+                    </a>
 
-                <a runat="server" href="~/Pages/Landing/Default.aspx">Home</a>
-                <a runat="server" href="~/Pages/Projects/Projects.aspx">Projects</a>
+                    <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
+                        <div class="bar-fluid"></div>
+                        <div class="drop"></div>
+                        <span>Projects</span>
+                    </a>
+                </div>
             </div>
 
             <!-- RIGHT SIDE - NAVIGATION -->
@@ -105,7 +216,6 @@
                     Login
                 </a>
             </div>
-
         </div>
 
         <!-- PAGE CONTENT -->
@@ -113,7 +223,6 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-
     </form>
 </body>
 </html>
