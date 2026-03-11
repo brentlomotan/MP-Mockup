@@ -105,8 +105,8 @@
   }
   .proj-filter-btn:hover { border-color: var(--green); color: var(--green); }
   .proj-filter-btn.active {
-    background: var(--green);
-    border-color: var(--green);
+    background: var(--navy);
+    border-color: var(--navy);
     color: #fff;
   }
 
@@ -247,13 +247,13 @@
   .proj-view-link {
     font-family: Verdana, sans-serif;
     font-size: 13px;
-    color: var(--green);
+    color: var(--navy);
     text-decoration: none;
     font-weight: 600;
     align-self: flex-start;
     transition: color 0.2s;
   }
-  .proj-view-link:hover { color: var(--green-light); }
+  .proj-view-link:hover { color: var(--navy-light); }
   /*ANIMATIONS*/
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
