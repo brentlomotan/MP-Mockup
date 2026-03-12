@@ -9,6 +9,7 @@
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
     <style>
+
         body {
             margin:0;
             font-family:Arial;
