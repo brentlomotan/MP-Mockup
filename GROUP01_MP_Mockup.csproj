@@ -120,6 +120,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Avatar.png" />
     <Content Include="Images\Logo.png" />
+    <Content Include="Images\LogoFull.png" />
     <Content Include="Images\ProjectDetailsBanner.png" />
     <Content Include="Pages\Auth\Signup.aspx" />
     <Content Include="Pages\Landing\Default.aspx" />

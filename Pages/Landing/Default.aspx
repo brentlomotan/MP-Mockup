@@ -3,29 +3,23 @@
 
 <style>
     main {
-        margin-top: 0px;
+        margin-top: 0;
         position: relative;
         z-index: 1;
         background: #AED3EF;
-        min-height: 100vh; 
-        display: flex;
-    }
+        min-height: 100vh;
 
-    .container {
-        padding: 0rem;
-        flex: 1;
-        min-height: 60vh; 
+        width: calc(100% + 60px);
+        margin-left: -30px;
     }
 
     .slider-wrapper {
         position: relative;
         width: 100%;
-        display: flex;
     }
 
     @keyframes bannerChange{
         0%, 45% {transform: translateX(0%);}
-
         50%, 95% {transform: translateX(-100%);}
         100% {transform: translateX(0%);}
     }
@@ -55,15 +49,6 @@
         animation: bannerChange 20s infinite ease-out;
     }
 
-    .slider img {
-        flex: 1 0 100%;
-        scroll-snap-align: start;
-        scroll-margin-top: 0;         
-        object-fit: cover;
-        width: 100%;
-        animation: bannerChange 20s infinite ease-out;
-    }
-
     .slider-nav {
         display: flex;
         column-gap: 1rem;
@@ -72,6 +57,38 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: 1;
+    }
+
+    .slider-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 3;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .slider-text h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        margin: 0;
+    }
+
+    .slider-text p {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        margin-top: 0.5rem;
+    }
+
+    .slider-logo {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+        max-width: 200px;
+        height: auto;
+        pointer-events: none;
     }
 
     @keyframes bounceDown {
@@ -100,25 +117,25 @@
         text-shadow: 0 1px 4px rgba(0,0,0,0.4);
     }
 
-
-    .footer {
+    .about-section {
         background: #355872;
         color: #fff;
         display: flex;
         flex-direction: column;
-        position: sticky;
-        bottom: 0;
-        z-index: -1;
         padding: 4rem 2rem 2rem;
+        z-index: 0;
+        width: calc(100% + 60px);
+        margin-left: -30px;
     }
 
-    .footer-inner {
-        max-width: 60rem;
+    .about-inner {
+        max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+        padding: 0 30px;
     }
 
-    .footer-bio {
+    .about-bio {
         font-size: clamp(3rem, 7vw, 6rem);
         font-weight: 900;
         color: #F7F8F0;
@@ -128,7 +145,7 @@
         margin: 0 0 1.5rem 0;
     }
 
-    .footer-tagline {
+    .about-tagline {
         font-size: clamp(0.85rem, 1.3vw, 1rem);
         color: rgba(247, 248, 240, 0.6);
         font-weight: 400;
@@ -138,128 +155,50 @@
         border-left: 3px solid #F7F8F0;
         padding-left: 1rem;
     }
-
-    .footer-divider-full {
-        width: 100%;
-        height: 1px;
-        background: rgba(247, 248, 240, 0.15);
-        margin-bottom: 1.5rem;
-    }
-
-    .footer-moreofus {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .footer-moreofus img {
-        width: 5rem;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        opacity: 0.9;
-    }
-
-    .footer-nav-links {
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .footer-nav-links p {
-        margin: 0;
-    }
-
-    .footer-nav-links p span {
-        color: rgba(247, 248, 240, 0.6);
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: color 0.2s ease;
-    }
-
-    .footer-nav-links p span:hover {
-        color: #fff;
-    }
-
-    .footer-copy {
-        font-size: 0.75rem;
-        color: #F7F8F0;
-        margin: 0;
-    }
-
-    .footer-nav-links a {
-        text-decoration: none;
-        color: inherit;
-    }
 </style>
 
 <main>
-    <section class="container">
+    <div class="slider-wrapper">
 
-        <div class="slider-wrapper">
-            <div class="slider">
-
-                <img id="slide-1" src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=1470&auto=format&fit=crop" alt="Ocean"/>
-
-                <img id="slide-2" src="https://images.unsplash.com/photo-1460501501851-d5946a18e552?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Water"/>
-
-                <img id="slide-3" src="https://images.unsplash.com/photo-1610891015188-5369212db097?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Factory" />
-
-                <img id="slide-4" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="More Factory" />
-
-                <img id="slide-5" src="https://images.unsplash.com/photo-1669991504272-19c28fd98c15?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Philippines" />
-            </div>
-
-            <div class="slider-nav">
-
-                <a href="#slide-1"></a>
-
-                <a href="#slide-2"></a>
-
-                <a href="#slide-3"></a>
-
-                <a href="#slide-4"></a>
-
-                <a href="#slide-5"></a>
-
-            </div>
-
-          
-            <div class="scroll-down">
-                Scroll down for more info
-                
-            </div>
+        <div class="slider">
+            <img id="slide-1" src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=1470&auto=format&fit=crop" alt="Ocean"/>
+            <img id="slide-2" src="https://images.unsplash.com/photo-1460501501851-d5946a18e552?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Water"/>
+            <img id="slide-3" src="https://images.unsplash.com/photo-1610891015188-5369212db097?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Factory" />
+            <img id="slide-4" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="More Factory" />
+            <img id="slide-5" src="https://images.unsplash.com/photo-1669991504272-19c28fd98c15?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Philippines" />
         </div>
-    </section>
+
+        <img src="/Images/LogoFull.png" alt="LogoFull" class="slider-logo" />
+
+        <div class="slider-text">
+            <h1>Water for the people.</h1>
+        </div>
+
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+            <a href="#slide-5"></a>
+        </div>
+          
+        <div class="scroll-down">
+            Scroll down for more info
+        </div>
+
+    </div>
 </main>
 
-<footer class="footer">
-    <div class="footer-inner">
-        <p class="footer-bio">Lorem Ipsum</p>
+<section class="about-section">
+    <div class="about-inner">
 
-        <p class="footer-tagline">
+        <p class="about-bio">About Us</p>
+
+        <p class="about-tagline">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
         </p>
 
-        <div class="footer-divider-full"></div>
-
-        <div class="footer-moreofus">
-            <img id="logo-1" src="https://scontent.fmnl16-1.fna.fbcdn.net/v/t1.15752-9/642803628_4185124805132628_5870511885440428509_n.png?stp=dst-png_s2048x2048&_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=QobXhHPwDkQQ7kNvwG1ud_e&_nc_oc=Adkp0sdB-fbaTg8N0oP-7ax2ZJ2esBjj57mZVZ0u6r2Dq35zMqkY7-G0KFn0Btsu95c&_nc_zt=23&_nc_ht=scontent.fmnl16-1.fna&_nc_ss=8&oh=03_Q7cD4wGpHoD75yKmzcH8RSygGuJ2JJc9ZIhp3yGTXHJkB-vS7w&oe=69D71D78" alt="Logo" />
-            
-            <div class="footer-nav-links">
-                <p><a href="~/Pages/Projects/Projects.aspx" runat="server" class="OurProjLink">Our Projects →</a></p>
-                <p><a href="~/Pages/Auth/Signup.aspx" runat="server" class="RegisterLink">Register</a></p>
-                <p><a href="#" class="footer-link">Learn More</a></p>
-                <p><a href="#" class="footer-link">Contact Us</a></p>
-            </div>
-        </div>
     </div>
-</footer>
+</section>
 
 </asp:Content>
