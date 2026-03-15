@@ -16,22 +16,21 @@ namespace GROUP01_MP_Mockup.Pages.Auth
 
         protected void btnSignup_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtSignupUsername.Text) && !string.IsNullOrWhiteSpace(txtSignupPassword.Text) && !string.IsNullOrWhiteSpace(txtConfirmPassword.Text))
+            if (!string.IsNullOrWhiteSpace(txtUsername.Text) &&
+                !string.IsNullOrWhiteSpace(txtFirstName.Text) &&
+                !string.IsNullOrWhiteSpace(txtLastName.Text) &&
+                !string.IsNullOrWhiteSpace(txtAddress.Text) &&
+                !string.IsNullOrWhiteSpace(txtPassword.Text) &&
+                !string.IsNullOrWhiteSpace(txtConfirmPassword.Text))
             {
-                if (txtSignupPassword.Text != txtConfirmPassword.Text)
+                if (txtPassword.Text != txtConfirmPassword.Text)
                 {
                     lblSignupMessage.Text = "Passwords do not match.";
-                    lblSignupMessage.Visible = true;
                     return;
                 }
 
-                Session["User"] = txtSignupUsername.Text;
+                Session["User"] = txtUsername.Text;
                 Response.Redirect("~/Pages/Landing/Default.aspx");
-            }
-            else
-            {
-                lblSignupMessage.Text = "Please fill in all fields.";
-                lblSignupMessage.Visible = true;
             }
         }
     }
