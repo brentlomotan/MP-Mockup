@@ -18,7 +18,17 @@ namespace GROUP01_MP_Mockup.Pages.Auth
         {
             if (!string.IsNullOrWhiteSpace(txtUsername.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                Session["User"] = txtUsername.Text;
+                //Temp till data base added
+                if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+                {
+                    Session["User"] = txtUsername.Text;
+                    Session["Role"] = "Admin";
+                }
+                else
+                {
+                    Session["User"] = txtUsername.Text;
+                    Session["Role"] = "User";
+                }
                 Response.Redirect("~/Pages/Landing/Default.aspx");
             }
             else

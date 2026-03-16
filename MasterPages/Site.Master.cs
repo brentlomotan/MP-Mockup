@@ -32,11 +32,26 @@ namespace GROUP01_MP_Mockup
                 string username = Session["User"].ToString();
                 lblUsername.Text = username;
                 lblDropdownUsername.Text = username;
-            }
-            else
-            {
-                pnlLogin.Visible = true;
-                pnlProfile.Visible = false;
+
+                string role = Session["Role"].ToString();
+
+                if (role == "User")
+                {
+                    pnlUserLinks.Visible = true;
+                }
+
+                if (!IsPostBack)
+                {
+                    if (role == "Admin" && path.Contains("default"))
+                        Response.Redirect("~/Pages/Admin/AdminPanel.aspx");
+                    else if (role == "User" && path.Contains("default"))
+                        Response.Redirect("~/Pages/Users/User.aspx");
+                }
+                else
+                {
+                    pnlLogin.Visible = true;
+                    pnlProfile.Visible = false;
+                }
             }
         }
 
