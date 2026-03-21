@@ -29,9 +29,15 @@ namespace GROUP01_MP_Mockup
             {
                 HomeTab.Attributes["class"] += " active";
             }
+
             if (path.Contains("analytics"))
             {
                 ProjectsTab.Attributes["class"] += " active";
+            }
+
+            if (path.Contains("userdashboard") || path.Contains("bills") || path.Contains("transactions") || path.Contains("processtransaction"))
+            {
+                DashboardTab.Attributes["class"] += " active";
             }
 
 
@@ -49,6 +55,7 @@ namespace GROUP01_MP_Mockup
                 if (role == "User")
                 {
                     pnlUserLinks.Visible = true;
+                    pnlDashboardTab.Visible = true;
                 }
 
                 if (role == "Admin")
@@ -64,7 +71,7 @@ namespace GROUP01_MP_Mockup
                     if (role == "Admin" && path.Contains("default"))
                         Response.Redirect("~/Pages/Admin/AdminPanel.aspx");
                     else if (role == "User" && path.Contains("default"))
-                        Response.Redirect("~/Pages/Users/User.aspx");
+                        Response.Redirect("~/Pages/Users/UserDashboard.aspx");
                 }
                 else
                 {

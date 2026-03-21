@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="UserDashboard.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Users.UserDashboard" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="UserDashboard.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Users.UserDashboard" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -19,8 +19,7 @@
             color: #355872;
         }
 
-        /* ── Page Header ── */
-        .dash-header { margin-bottom: 22px; }
+        .dash-header { margin-bottom: 22px; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
         .dash-header h1 {
             font-size: 22px;
             font-weight: 700;
@@ -33,7 +32,6 @@
             margin: 0;
         }
 
-        /* ── Stat Cards ── */
         .stat-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -80,7 +78,6 @@
             margin-top: 4px;
         }
 
-        /* ── Grid Layouts ── */
         .grid-2 {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -93,7 +90,6 @@
             gap: 16px;
         }
 
-        /* ── Cards ── */
         .card {
             background: #F7F8F0;
             border-radius: 12px;
@@ -115,7 +111,6 @@
             color: #7a9bb5;
         }
 
-        /* ── Chart Wrappers ── */
         .chart-wrap { position: relative; width: 100%; height: 220px; }
         .donut-wrap {
             display: flex;
@@ -124,12 +119,10 @@
             height: 200px;
         }
 
-        /* ── Legend ── */
         .legend { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
         .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #7a9bb5; font-weight: 600; }
         .legend-dot { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
 
-        /* ── Bill Rows ── */
         .bill-row {
             display: flex;
             align-items: center;
@@ -155,7 +148,6 @@
         .badge-unpaid   { background: #fde8e8; color: #a32d2d; }
         .badge-partial  { background: #feecd4; color: #8a4c10; }
 
-        /* ── Action Box ── */
         .action-box {
             margin-top: 14px;
             padding: 12px 14px;
@@ -173,6 +165,8 @@
         }
         .action-box p { font-size: 12px; color: #8a4c10; margin: 0 0 8px; }
         .pay-btn {
+            display: inline-block;
+            text-decoration: none;
             background: #2f6fa3;
             color: white;
             border: none;
@@ -186,7 +180,6 @@
         }
         .pay-btn:hover { background: #245a87; }
 
-        /* ── Usage Rows ── */
         .usage-row {
             display: flex;
             align-items: center;
@@ -210,7 +203,6 @@
         }
         .usage-val { font-size: 13px; font-weight: 700; color: #2f6fa3; width: 56px; text-align: right; flex-shrink: 0; }
 
-        /* ── Usage Summary Box ── */
         .usage-summary {
             margin-top: 14px;
             padding: 10px 14px;
@@ -222,7 +214,6 @@
         .usage-summary-val { font-size: 19px; font-weight: 700; color: #355872; }
         .usage-summary-val small { font-size: 12px; font-weight: 500; color: #7a9bb5; }
 
-        /* ── Announcements ── */
         .ann-item {
             padding: 12px 0;
             border-bottom: 1px solid #dde8f0;
@@ -241,10 +232,8 @@
         .ann-desc  { font-size: 12px; color: #7a9bb5; }
         .ann-date  { font-size: 11px; color: #7a9bb5; margin-top: 4px; }
 
-        /* ── No Data State ── */
         .no-data { font-size: 13px; color: #7a9bb5; text-align: center; padding: 20px 0; }
 
-        /* ── Responsive ── */
         @media (max-width: 1024px) {
             .stat-row  { grid-template-columns: repeat(2, 1fr); }
             .grid-2    { grid-template-columns: 1fr; }
@@ -254,17 +243,22 @@
     </style>
 
     <div class="dash-wrap">
-        <!-- PAGE HEADER -->
         <div class="dash-header">
-            <h1>Welcome back, <asp:Label ID="lblFirstName" runat="server" Text="User" /></h1>
-            <p>
-                <asp:Label ID="lblBarangayName" runat="server" Text="" /> &nbsp;&middot;&nbsp;
-                <asp:Label ID="lblAddress" runat="server" Text="" /> &nbsp;&middot;&nbsp;
-                Member since <asp:Label ID="lblMemberSince" runat="server" Text="" />
-            </p>
+            <div>
+                <h1>Welcome back, <asp:Label ID="lblFirstName" runat="server" Text="User" /></h1>
+                <p>
+                    <asp:Label ID="lblBarangayName" runat="server" Text="" /> &nbsp;&middot;&nbsp;
+                    <asp:Label ID="lblAddress" runat="server" Text="" /> &nbsp;&middot;&nbsp;
+                    Member since <asp:Label ID="lblMemberSince" runat="server" Text="" />
+                </p>
+            </div>
+            <a href="/Pages/Users/Transactions.aspx" style="font-size:13px; font-weight:600; color:#2f6fa3; text-decoration:none; padding:7px 16px; border:1.5px solid #7AAACE; border-radius:8px; background:#F7F8F0; transition:all 0.15s; white-space:nowrap; display:inline-block;"
+               onmouseover="this.style.background='#2f6fa3';this.style.color='#fff';this.style.borderColor='#2f6fa3';"
+               onmouseout="this.style.background='#F7F8F0';this.style.color='#2f6fa3';this.style.borderColor='#7AAACE';">
+                View Transactions >>>
+            </a>
         </div>
 
-        <!-- STAT CARDS -->
         <div class="stat-row">
             <div class="stat-card blue">
                 <div class="stat-label">Current Usage</div>
@@ -288,10 +282,8 @@
             </div>
         </div>
 
-        <!-- ROW 2: Bar Chart + Invoice Donut -->
         <div class="grid-2">
 
-            <!-- MONTHLY USAGE BAR CHART -->
             <div class="card">
                 <div class="card-title">Monthly Water Usage <span>cubic meters (m³)</span></div>
                 <div class="chart-wrap">
@@ -299,7 +291,6 @@
                 </div>
             </div>
 
-            <!-- INVOICE STATUS DONUT -->
             <div class="card">
                 <div class="card-title">Invoice Status</div>
                 <div class="donut-wrap">
@@ -349,9 +340,11 @@
                 </div>
             </div>
 
-            <!-- RECENT BILLS -->
             <div class="card">
-                <div class="card-title">Recent Bills</div>
+                <div class="card-title">
+                    Recent Bills
+                    <a href="/Pages/Users/Bills.aspx" style="font-size:12px; font-weight:600; color:#2f6fa3; text-decoration:none;">View All >>></a>
+                </div>
                 <asp:Repeater ID="rptBills" runat="server">
                     <ItemTemplate>
                         <div class="bill-row">
@@ -373,12 +366,11 @@
                     <div class="action-box">
                         <div class="action-box-label">Action Required</div>
                         <p>You have an outstanding balance. Please settle your bill before the due date to avoid penalties.</p>
-                        <button class="pay-btn" onclick="alert('Redirecting to payment page...'); return false;">Pay Now &rarr;</button>
+                        <a href="/Pages/Users/Bills.aspx" class="pay-btn">Pay Now >>></a>
                     </div>
                 </asp:Panel>
             </div>
 
-            <!-- ANNOUNCEMENTS -->
             <div class="card">
                 <div class="card-title">Announcements</div>
                 <asp:Repeater ID="rptAnnouncements" runat="server">
@@ -399,7 +391,6 @@
         </div>
     </div>
 
-    <!-- Hidden fields to pass server-side chart data to JS -->
     <asp:HiddenField ID="hdnChartData" runat="server" Value="" />
     <asp:HiddenField ID="hdnDonutData" runat="server" Value="" />
 
@@ -408,7 +399,6 @@
         (function () {
             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-            // Bar chart data from server
             var rawBar = document.getElementById('<%= hdnChartData.ClientID %>').value;
             var barData = rawBar ? JSON.parse(rawBar) : new Array(12).fill(0);
 
@@ -449,11 +439,10 @@
                 }
             });
 
-            // Donut chart data from server [unpaid, partial, paid]
             var rawDonut = document.getElementById('<%= hdnDonutData.ClientID %>').value;
             var donutData = rawDonut ? JSON.parse(rawDonut) : [0, 0, 0];
             var total = donutData[0] + donutData[1] + donutData[2];
-            if (total === 0) donutData = [1, 0, 0]; // show all-red when no data
+            if (total === 0) donutData = [1, 0, 0];
 
             new Chart(document.getElementById('donutChart'), {
                 type: 'doughnut',
@@ -472,7 +461,7 @@
                     cutout: '62%',
                     plugins: {
                         legend: { display: false },
-                        tooltip: { callbacks: { label: function(ctx){ return ' ' + ctx.label + ': ' + ctx.raw; } } }
+                        tooltip: { callbacks: { label: function (ctx) { return ' ' + ctx.label + ': ' + ctx.raw; } } }
                     }
                 }
             });

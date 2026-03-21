@@ -7,164 +7,191 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GROUP01_MP_Mockup
+namespace GROUP01_MP_Mockup.Pages.Users
 {
 
 
-    public partial class SiteMaster
+    public partial class ProcessTransaction
     {
 
         /// <summary>
-        /// LogoImage control.
+        /// pnlError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image LogoImage;
+        protected global::System.Web.UI.WebControls.Panel pnlError;
 
         /// <summary>
-        /// HomeTab control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor HomeTab;
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// HomeTabText control.
+        /// pnlPayForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HomeTabText;
+        protected global::System.Web.UI.WebControls.Panel pnlPayForm;
 
         /// <summary>
-        /// ProjectsTab control.
+        /// lblBillID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ProjectsTab;
+        protected global::System.Web.UI.WebControls.Label lblBillID;
 
         /// <summary>
-        /// ProjectsTabText control.
+        /// lblPeriod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProjectsTabText;
+        protected global::System.Web.UI.WebControls.Label lblPeriod;
 
         /// <summary>
-        /// pnlDashboardTab control.
+        /// lblDueDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDashboardTab;
+        protected global::System.Web.UI.WebControls.Label lblDueDate;
 
         /// <summary>
-        /// DashboardTab control.
+        /// litBadgeClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor DashboardTab;
+        protected global::System.Web.UI.WebControls.Literal litBadgeClass;
 
         /// <summary>
-        /// DashboardTabText control.
+        /// lblStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DashboardTabText;
+        protected global::System.Web.UI.WebControls.Label lblStatus;
 
         /// <summary>
-        /// pnlLogin control.
+        /// lblAmountDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlLogin;
+        protected global::System.Web.UI.WebControls.Label lblAmountDue;
 
         /// <summary>
-        /// pnlProfile control.
+        /// hdnMethod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlProfile;
+        protected global::System.Web.UI.WebControls.HiddenField hdnMethod;
 
         /// <summary>
-        /// ProfileImage control.
+        /// hdnBillID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ProfileImage;
+        protected global::System.Web.UI.WebControls.HiddenField hdnBillID;
 
         /// <summary>
-        /// lblUsername control.
+        /// btnPay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.Button btnPay;
 
         /// <summary>
-        /// lblDropdownUsername control.
+        /// pnlReceipt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDropdownUsername;
+        protected global::System.Web.UI.WebControls.Panel pnlReceipt;
 
         /// <summary>
-        /// pnlUserLinks control.
+        /// lblTxnID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlUserLinks;
+        protected global::System.Web.UI.WebControls.Label lblTxnID;
 
         /// <summary>
-        /// SettingsButton control.
+        /// lblRcptBillID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton SettingsButton;
+        protected global::System.Web.UI.WebControls.Label lblRcptBillID;
 
         /// <summary>
-        /// btnLogout control.
+        /// lblRcptPeriod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
+        protected global::System.Web.UI.WebControls.Label lblRcptPeriod;
 
         /// <summary>
-        /// MainContent control.
+        /// lblRcptMethod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblRcptMethod;
+
+        /// <summary>
+        /// lblRcptDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRcptDate;
+
+        /// <summary>
+        /// lblRcptAmount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRcptAmount;
+
+        /// <summary>
+        /// hdnCardJson control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnCardJson;
     }
 }

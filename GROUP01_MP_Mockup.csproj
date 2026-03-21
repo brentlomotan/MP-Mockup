@@ -132,6 +132,9 @@
     <Content Include="Pages\Auth\Login.aspx" />
     <Content Include="Pages\Projects\Projects.aspx" />
     <Content Include="Pages\Projects\ProjectsDetails.aspx" />
+    <Content Include="Pages\Users\Bills.aspx" />
+    <Content Include="Pages\Users\ProcessTransaction.aspx" />
+    <Content Include="Pages\Users\Transactions.aspx" />
     <Content Include="Pages\Users\UserDashboard.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -269,6 +272,27 @@
     </Compile>
     <Compile Include="Pages\Projects\ProjectsDetails.aspx.designer.cs">
       <DependentUpon>ProjectsDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\Bills.aspx.cs">
+      <DependentUpon>Bills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\Bills.aspx.designer.cs">
+      <DependentUpon>Bills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\ProcessTransaction.aspx.cs">
+      <DependentUpon>ProcessTransaction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\ProcessTransaction.aspx.designer.cs">
+      <DependentUpon>ProcessTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Users\Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Users\Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Users\UserDashboard.aspx.cs">
       <DependentUpon>UserDashboard.aspx</DependentUpon>
