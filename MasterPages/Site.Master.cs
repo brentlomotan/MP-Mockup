@@ -30,16 +30,14 @@ namespace GROUP01_MP_Mockup
                 HomeTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("fullareanalytics"))
+            if (path.Contains("analytics"))
             {
-                AnalyticsTab.Attributes["class"] += " active";
+                ProjectsTab.Attributes["class"] += " active";
             }
 
             if (path.Contains("userdashboard") || path.Contains("bills") || path.Contains("transactions") || path.Contains("processtransaction"))
             {
                 DashboardTab.Attributes["class"] += " active";
-
-
             }
 
 
@@ -57,18 +55,18 @@ namespace GROUP01_MP_Mockup
                 if (role == "User")
                 {
                     pnlUserLinks.Visible = true;
+                    pnlHomeTab.Visible = false;
                     pnlDashboardTab.Visible = true;
                 }
+
                 if (role == "Admin")
                 {
                     HomeTabText.InnerText = "Admin Dashboard";
                     HomeTab.HRef = "~/Pages/Admin/AdminPanel.aspx";
-                    ProjectsTabText.InnerText = "Projects";
-                    ProjectsTab.HRef = "~/Pages/Projects/Projects.aspx";
-                    AnalyticsTab.Style["display"] = "flex";
-                    if (path.Contains("fullareanalytics"))
-                        AnalyticsTab.Attributes["class"] += " active";
+                    ProjectsTab.HRef = "~/Pages/Admin/FullAreaAnalytics.aspx";
+                    ProjectsTabText.InnerText = "Full Area Analytics";
                 }
+
                 if (!IsPostBack)
                 {
                     if (role == "Admin" && path.Contains("default"))
@@ -76,11 +74,11 @@ namespace GROUP01_MP_Mockup
                     else if (role == "User" && path.Contains("default"))
                         Response.Redirect("~/Pages/Users/UserDashboard.aspx");
                 }
-            }
-            else
-            {
-                pnlLogin.Visible = true;
-                pnlProfile.Visible = false;
+                else
+                {
+                    pnlLogin.Visible = true;
+                    pnlProfile.Visible = false;
+                }
             }
         }
 

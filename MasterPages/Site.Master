@@ -13,6 +13,7 @@
         html, body {
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         *,
@@ -25,7 +26,6 @@
             font-family:Arial;
             background:#AED3EF; /* MAIN BG COLOR */
             color:#355872; /* MAIN FONT COLOR */
-            padding-top: 30px;
         }
 
         /* HEADER */
@@ -36,29 +36,10 @@
             position:sticky;
             top:0;
             background:#F7F8F0; /* HEADER BG COLOR */
-            padding:8px 40px;
-            min-height:50px;
+            padding:20px 40px;
+            min-height:80px;
+            margin-top:15px;
             z-index: 10;
-        }
-
-        .header-nav-links {
-            position: absolute;
-            top: -25px;
-            right: 40px;
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            z-index: 20;
-        }
-
-        .header-nav-links a {
-            text-decoration: none;
-            color: #355872;
-            font-weight: 600;
-        }
-
-        .header-nav-links a:hover {
-            color: #2f6fa3;
         }
 
         /* FOOTER */
@@ -79,20 +60,33 @@
             margin-bottom: 1.5rem;
         }
 
-        .footer-details {
+        .footer-moreofus {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 2rem;
-            font-size: 14px;
-            color: #355872;
-            font-weight: 600;
         }
 
-        .footer-details img {
+        .footer-moreofus img {
             width: 120px;
             height: auto;
+        }
+
+        .footer-nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-nav-links a {
+            text-decoration: none;
+            color: #355872;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav-links a:hover {
+            color: #2f6fa3;
         }
 
         /* NAV BAR */
@@ -111,7 +105,7 @@
             align-items:center;
 
             padding:0 22px;
-            height:50px;
+            height:80px;
 
             text-decoration:none;
             font-weight:600;
@@ -132,7 +126,7 @@
         /* FLUID */
         .bar-fluid{
             position:absolute;
-            top:-23px;
+            top:-20px;
             left:0;
             width:100%;
             height:0;
@@ -144,7 +138,7 @@
         /* DROP */
         .drop{
             position:absolute;
-            top:-28px;
+            top:-25px;
             left:50%;
             width:5px;
             height:5px;
@@ -226,9 +220,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-        }
-        .nav-bar > span { 
-            display: contents; 
         }
 
         .login-btn {
@@ -483,6 +474,7 @@
             position: relative;
             z-index: 1;
         }
+
     </style>
 </head>
 
@@ -499,25 +491,14 @@
                     ImageUrl="~/Images/Logo.png"
                     alt="Logo"
                 />
-
                 <div class="nav-bar">
-                    <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="HomeTabText" runat="server">Home</span>
-                    </a>
-
-                    <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="ProjectsTabText" runat="server">Projects</span>
-                    </a>
-
-                    <a id="AnalyticsTab" runat="server" href="~/Pages/Admin/FullAreaAnalytics.aspx" class="bar-item" style="display:none;">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="AnalyticsTabText" runat="server">Analytics</span>
-                    </a>
+                    <asp:Panel ID="pnlHomeTab" runat="server" Visible="true" style="display:contents;">
+                        <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
+                            <div class="bar-fluid"></div>
+                            <div class="drop"></div>
+                            <span id="HomeTabText" runat="server">Home</span>
+                        </a>
+                    </asp:Panel>
 
                     <asp:Panel ID="pnlDashboardTab" runat="server" Visible="false" style="display:contents;">
                         <a id="DashboardTab" runat="server" href="~/Pages/Users/UserDashboard.aspx" class="bar-item">
@@ -526,6 +507,12 @@
                             <span id="DashboardTabText" runat="server">Dashboard</span>
                         </a>
                     </asp:Panel>
+
+                    <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
+                        <div class="bar-fluid"></div>
+                        <div class="drop"></div>
+                        <span id="ProjectsTabText" runat="server">Projects</span>
+                    </a>
                 </div>
             </div>
 
@@ -632,11 +619,14 @@
 
                 <div class="footer-divider-full"></div>
 
-                <div class="footer-details">
+                <div class="footer-moreofus">
                     <img src="/Images/LogoFull.png" alt="Full Logo" />
 
-                    <div>
-                        &copy; <%= DateTime.Now.Year %>
+                    <div class="footer-nav-links">
+                        <a href="~/Pages/Projects/Projects.aspx" runat="server">Our Projects →</a>
+                        <a href="~/Pages/Auth/Signup.aspx" runat="server">Register</a>
+                        <a href="#">Learn More</a>
+                        <a href="#">Contact Us</a>
                     </div>
                 </div>
 

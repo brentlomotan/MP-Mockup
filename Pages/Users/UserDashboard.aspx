@@ -3,10 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
-        .footer {
-            display: none;
-        }
-
         .dash-wrap {
             margin-top: 0;
             width: calc(100% + 60px);
@@ -28,7 +24,7 @@
         }
         .dash-header p {
             font-size: 13px;
-            color: #7a9bb5;
+            color: #4a7a96;
             margin: 0;
         }
 
@@ -366,7 +362,7 @@
                     <div class="action-box">
                         <div class="action-box-label">Action Required</div>
                         <p>You have an outstanding balance. Please settle your bill before the due date to avoid penalties.</p>
-                        <a href="/Pages/Users/Bills.aspx" class="pay-btn">Pay Now >>></a>
+                        <a href="/Pages/Users/Bills.aspx" class="pay-btn">Pay Now &rarr;</a>
                     </div>
                 </asp:Panel>
             </div>
