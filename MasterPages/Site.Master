@@ -36,9 +36,9 @@
             position:sticky;
             top:0;
             background:#F7F8F0; /* HEADER BG COLOR */
-            padding:20px 40px;
-            min-height:80px;
-            margin-top:15px;
+            padding:8px 40px;
+            min-height:50px;
+            margin-top:30px;
             z-index: 10;
         }
 
@@ -105,7 +105,7 @@
             align-items:center;
 
             padding:0 22px;
-            height:80px;
+            height:50px;
 
             text-decoration:none;
             font-weight:600;
