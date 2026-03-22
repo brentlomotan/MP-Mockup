@@ -285,6 +285,9 @@
                 <div class="chart-wrap">
                     <canvas id="barChart"></canvas>
                 </div>
+                <asp:Button ID="btnViewAnalytics" runat="server" Text="View Analytics →"
+                    CssClass="pay-btn" OnClick="btnViewAnalytics_Click"
+                    style="margin-top:12px; font-size:12px; padding:6px 14px;" />
             </div>
 
             <div class="card">
