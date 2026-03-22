@@ -30,14 +30,16 @@ namespace GROUP01_MP_Mockup
                 HomeTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("analytics"))
+            if (path.Contains("fullareanalytics"))
             {
-                ProjectsTab.Attributes["class"] += " active";
+                AnalyticsTab.Attributes["class"] += " active";
             }
 
             if (path.Contains("userdashboard") || path.Contains("bills") || path.Contains("transactions") || path.Contains("processtransaction"))
             {
                 DashboardTab.Attributes["class"] += " active";
+
+
             }
 
 
@@ -63,6 +65,9 @@ namespace GROUP01_MP_Mockup
                     HomeTab.HRef = "~/Pages/Admin/AdminPanel.aspx";
                     ProjectsTabText.InnerText = "Projects";
                     ProjectsTab.HRef = "~/Pages/Projects/Projects.aspx";
+                    AnalyticsTab.Style["display"] = "flex";
+                    if (path.Contains("fullareanalytics"))
+                        AnalyticsTab.Attributes["class"] += " active";
                 }
                 if (!IsPostBack)
                 {

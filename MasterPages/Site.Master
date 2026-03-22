@@ -221,6 +221,9 @@
             align-items: center;
             gap: 20px;
         }
+        .nav-bar > span { 
+            display: contents; 
+        }
 
         .login-btn {
             background: #7AAACE; 
@@ -424,6 +427,8 @@
             z-index: 1;
         }
 
+
+
     </style>
 </head>
 
@@ -440,29 +445,35 @@
                     ImageUrl="~/Images/Logo.png"
                     alt="Logo"
                 />
-                <div class="nav-bar">
-                    <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="HomeTabText" runat="server">Home</span>
-                    </a>
+                                            <div class="nav-bar">
+               <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
 
-                    <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="ProjectsTabText" runat="server">Projects</span>
-                    </a>
+                                    <div class="bar-fluid"></div>
+                                    <div class="drop"></div>
+                                    <span id="HomeTabText" runat="server">Home</span>
+                                </a>
+              <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
 
-                    <asp:Panel ID="pnlDashboardTab" runat="server" Visible="false" style="display:contents;">
-                        <a id="DashboardTab" runat="server" href="~/Pages/Users/UserDashboard.aspx" class="bar-item">
-                            <div class="bar-fluid"></div>
-                            <div class="drop"></div>
-                            <span id="DashboardTabText" runat="server">Dashboard</span>
-                        </a>
-                    </asp:Panel>
-                </div>
-            </div>
+                                    <div class="bar-fluid"></div>
+                                    <div class="drop"></div>
+                                    <span id="ProjectsTabText" runat="server">Projects</span>
+                                </a>
+               <a id="AnalyticsTab" runat="server" href="~/Pages/Admin/FullAreaAnalytics.aspx" class="bar-item" style="display:none;">
 
+                                    <div class="bar-fluid"></div>
+                                    <div class="drop"></div>
+                                    <span id="AnalyticsTabText" runat="server">Analytics</span>
+                                </a>
+             <asp:Panel ID="pnlDashboardTab" runat="server" Visible="false" style="display:contents;">
+                                    <a id="DashboardTab" runat="server" href="~/Pages/Users/UserDashboard.aspx" class="bar-item">
+
+                                        <div class="bar-fluid"></div>
+                                        <div class="drop"></div>
+                                        <span id="DashboardTabText" runat="server">Dashboard</span>
+                                    </a>
+                                </asp:Panel>
+                            </div>
+                            </div>
             <!-- RIGHT SIDE - NAVIGATION -->
             <div class="nav-right">
                 <asp:Panel ID="pnlLogin" runat="server" Visible="true">
