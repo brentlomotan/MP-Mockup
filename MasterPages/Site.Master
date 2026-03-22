@@ -501,11 +501,21 @@
                 />
 
                 <div class="nav-bar">
-                    <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
-                        <div class="bar-fluid"></div>
-                        <div class="drop"></div>
-                        <span id="HomeTabText" runat="server">Home</span>
-                    </a>
+                    <asp:Panel ID="pnlHomeTab" runat="server" Visible="true" style="display:contents;">
+                        <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
+                            <div class="bar-fluid"></div>
+                            <div class="drop"></div>
+                            <span id="HomeTabText" runat="server">Home</span>
+                        </a>
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlDashboardTab" runat="server" Visible="false" style="display:contents;">
+                        <a id="DashboardTab" runat="server" href="~/Pages/Users/UserDashboard.aspx" class="bar-item">
+                            <div class="bar-fluid"></div>
+                            <div class="drop"></div>
+                            <span id="DashboardTabText" runat="server">Dashboard</span>
+                        </a>
+                    </asp:Panel>
 
                     <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
                         <div class="bar-fluid"></div>
@@ -518,14 +528,6 @@
                         <div class="drop"></div>
                         <span id="AnalyticsTabText" runat="server">Analytics</span>
                     </a>
-
-                    <asp:Panel ID="pnlDashboardTab" runat="server" Visible="false" style="display:contents;">
-                        <a id="DashboardTab" runat="server" href="~/Pages/Users/UserDashboard.aspx" class="bar-item">
-                            <div class="bar-fluid"></div>
-                            <div class="drop"></div>
-                            <span id="DashboardTabText" runat="server">Dashboard</span>
-                        </a>
-                    </asp:Panel>
                 </div>
             </div>
 
