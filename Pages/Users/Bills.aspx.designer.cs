@@ -7,119 +7,119 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GROUP01_MP_Mockup.Pages.Admin
+namespace GROUP01_MP_Mockup.Pages.Users
 {
 
 
-    public partial class AdminPanel
+    public partial class Bills
     {
 
         /// <summary>
-        /// PendingSet control.
+        /// lblTotalBills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater PendingSet;
+        protected global::System.Web.UI.WebControls.Label lblTotalBills;
 
         /// <summary>
-        /// hdnAnnID control.
+        /// lblOutstanding control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnAnnID;
+        protected global::System.Web.UI.WebControls.Label lblOutstanding;
 
         /// <summary>
-        /// txtAnnTitle control.
+        /// lblTotalPaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnnTitle;
+        protected global::System.Web.UI.WebControls.Label lblTotalPaid;
 
         /// <summary>
-        /// ddlAnnCategory control.
+        /// lblNextDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnnCategory;
+        protected global::System.Web.UI.WebControls.Label lblNextDue;
 
         /// <summary>
-        /// txtAnnDesc control.
+        /// lblNextDueAmt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnnDesc;
+        protected global::System.Web.UI.WebControls.Label lblNextDueAmt;
 
         /// <summary>
-        /// btnSaveAnn control.
+        /// lblBillCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveAnn;
+        protected global::System.Web.UI.WebControls.Label lblBillCount;
 
         /// <summary>
-        /// lblAnnMsg control.
+        /// rptBills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnnMsg;
+        protected global::System.Web.UI.WebControls.Repeater rptBills;
 
         /// <summary>
-        /// AnnouncementsRepeater control.
+        /// pnlNoBills control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater AnnouncementsRepeater;
+        protected global::System.Web.UI.WebControls.Panel pnlNoBills;
 
         /// <summary>
-        /// pnlNotification control.
+        /// lblTxnCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlNotification;
+        protected global::System.Web.UI.WebControls.Label lblTxnCount;
 
         /// <summary>
-        /// litMessage control.
+        /// rptTransactions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litMessage;
+        protected global::System.Web.UI.WebControls.Repeater rptTransactions;
 
         /// <summary>
-        /// btnClose control.
+        /// pnlNoTxn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClose;
+        protected global::System.Web.UI.WebControls.Panel pnlNoTxn;
 
         /// <summary>
-        /// hdnAnnFormOpen control.
+        /// hdnBillData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnAnnFormOpen;
+        protected global::System.Web.UI.WebControls.HiddenField hdnBillData;
     }
 }

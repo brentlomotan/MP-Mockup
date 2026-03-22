@@ -22,18 +22,11 @@
         justify-content: center;
         align-content: center;
         width: 100vw;
-    }
-
-    .container2{
-        margin-top: 150px;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        width: 100vw;
+        padding-top: 24px;
     }
 
     .container3{
-        margin-top: 150px;
+        margin-top: 24px;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -255,49 +248,73 @@
             </div>
         </div>    
     </div>
-    <div class="container2">
-        <div class="card">
-            <div class="Card2Header">
-                <h1 style="color: white; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Manage Projects</h1>
-                <asp:Button ID="btnAddNewProject" runat="server" Text="Add New Project" CssClass="btn-add-project" OnClick="btnAddNewProject_Click" />
-            </div>
-            <asp:Repeater ID="ProjectsRepeater" runat="server">
-                <ItemTemplate>
-                    <div class="ProjectCard" onclick="this.querySelector('.hidden-trigger').click();">
-                        <div class="TextHolder"> 
-                            <h3 class="h3"><%# Eval("Title") %></h3>
-                            <h4 class="h4">Category: <%# Eval("Category") %></h4>
-                            <h5 class="h5">Published by: <%# Eval("UserID")%></h5>
-                        </div>
-
-                        <asp:Button ID="btnHidden" CssClass="hidden-trigger" runat="server" style="display:none;" CommandArgument='<%# Eval("ProjectID") %>' OnClick="ShowProjectEdit" />
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
-    </div>
-    <div class="container3">
-        <div class="card">
+<div class="container3">
+    <div class="card">
         <div class="Card3Header">
             <h1 style="color: white; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Manage Announcements</h1>
-            <asp:Button ID="btnAddNewAnnouncement" runat="server" Text="Add New Announcement" CssClass="btn-add-project" OnClick="btnAddNewAnnouncement_Click" />
+            <button type="button" class="btn-add-project" onclick="toggleAnnForm()">+ Add Announcement</button>
         </div>
+
+        <!--ADD/EDIT FORM-->
+        <div id="annForm" style="display:none; background: rgba(0,0,0,0.15); border-radius: 8px; padding: 20px; margin: 0 20px 20px;">
+            <asp:HiddenField ID="hdnAnnID" runat="server" Value="0" />
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:11px; font-weight:700; color:#162732; text-transform:uppercase;">Title</label>
+                    <asp:TextBox ID="txtAnnTitle" runat="server" placeholder="Announcement title"
+                        style="padding:8px 10px; border-radius:6px; border:none; font-size:13px; width:100%;" />
+                </div>
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                    <label style="font-size:11px; font-weight:700; color:#162732; text-transform:uppercase;">Category</label>
+                    <asp:DropDownList ID="ddlAnnCategory" runat="server"
+                        style="padding:8px 10px; border-radius:6px; border:none; font-size:13px; width:100%;">
+                        <asp:ListItem Value="Regular" Text="Regular" />
+                        <asp:ListItem Value="Important" Text="Important" />
+                    </asp:DropDownList>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:4px; grid-column: 1 / -1;">
+                    <label style="font-size:11px; font-weight:700; color:#162732; text-transform:uppercase;">Description</label>
+                    <asp:TextBox ID="txtAnnDesc" runat="server" TextMode="MultiLine" placeholder="Announcement details"
+                        style="padding:8px 10px; border-radius:6px; border:none; font-size:13px; width:100%; height:80px;" />
+                </div>
+            </div>
+            <div style="display:flex; gap:10px;">
+                <asp:Button ID="btnSaveAnn" runat="server" Text="Save" OnClick="btnSaveAnn_Click"
+                    style="background:#2d9e5f; color:white; border:none; padding:8px 20px; border-radius:6px; font-size:13px; font-weight:700; cursor:pointer;" />
+                <button type="button" onclick="closeAnnForm()"
+                    style="background:#e24b4a; color:white; border:none; padding:8px 20px; border-radius:6px; font-size:13px; font-weight:700; cursor:pointer;">
+                    Cancel
+                </button>
+            </div>
+            <asp:Label ID="lblAnnMsg" runat="server" ForeColor="Red" Text=""
+                style="font-size:12px; margin-top:8px; display:block;" />
+        </div>
+
+        <!--ANNOUNCEMENTS LIST-->
         <asp:Repeater ID="AnnouncementsRepeater" runat="server">
             <ItemTemplate>
-                <div class="ProjectCard" onclick="this.querySelector('.hidden-trigger').click();">
+                <div class="ProjectCard">
                     <div class="TextHolder">
                         <h3 class="h3"><%# Eval("Title") %></h3>
                         <h4 class="h4">Category: <%# Eval("Category") %></h4>
-                        <h5 class="h5">Published by: <%# Eval("UserID")%></h5>
+                        <h5 class="h5"><%# Eval("PreviewDesc") %></h5>
+                        <div style="display:flex; gap:8px; padding-left:20px; padding-bottom:10px; margin-top:6px;">
+                            <asp:Button ID="btnEditAnn" runat="server" Text="Edit"
+                                CommandArgument='<%# Eval("AnnouncementID") %>'
+                                OnClick="EditAnn_Click"
+                                style="background:#2f6fa3; color:white; border:none; padding:5px 14px; border-radius:5px; font-weight:bold; cursor:pointer;" />
+                            <asp:Button ID="btnDeleteAnn" runat="server" Text="Delete"
+                                CommandArgument='<%# Eval("AnnouncementID") %>'
+                                OnClick="DeleteAnn_Click"
+                                OnClientClick="return confirm('Delete this announcement?');"
+                                style="background:#e24b4a; color:white; border:none; padding:5px 14px; border-radius:5px; font-weight:bold; cursor:pointer;" />
+                        </div>
                     </div>
-
-                     <asp:Button ID="btnHidden" CssClass="hidden-trigger" runat="server" style="display:none;" CommandArgument='<%# Eval("AnnouncementID") %>' OnClick="ShowAnnouncementEdit" />
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-        </div>
     </div>
-
+</div>
     <asp:Panel ID="pnlNotification" runat="server" Visible="false" CssClass="modal-overlay">
         <div class="modal-box">
             <div class="modal-inline">
@@ -307,5 +324,23 @@
         </div>
     </asp:Panel>
 
+    <asp:HiddenField ID="hdnAnnFormOpen" runat="server" Value="0" />
 </main>
+    <script>
+    function toggleAnnForm() {
+        var form = document.getElementById('annForm');
+        var isOpen = form.style.display === 'block';
+        form.style.display = isOpen ? 'none' : 'block';
+        document.getElementById('<%= hdnAnnFormOpen.ClientID %>').value = isOpen ? '0' : '1';
+    }
+    function closeAnnForm() {
+        document.getElementById('annForm').style.display = 'none';
+        document.getElementById('<%= hdnAnnFormOpen.ClientID %>').value = '0';
+    }
+    window.onload = function () {
+        if (document.getElementById('<%= hdnAnnFormOpen.ClientID %>').value === '1') {
+            document.getElementById('annForm').style.display = 'block';
+        }
+    };
+    </script>
 </asp:Content>

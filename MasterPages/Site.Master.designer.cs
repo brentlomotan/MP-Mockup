@@ -60,6 +60,51 @@ namespace GROUP01_MP_Mockup
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProjectsTabText;
 
         /// <summary>
+        /// AnalyticsTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor AnalyticsTab;
+
+        /// <summary>
+        /// AnalyticsTabText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl AnalyticsTabText;
+
+        /// <summary>
+        /// pnlDashboardTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDashboardTab;
+
+        /// <summary>
+        /// DashboardTab control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor DashboardTab;
+
+        /// <summary>
+        /// DashboardTabText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DashboardTabText;
+
+        /// <summary>
         /// pnlLogin control.
         /// </summary>
         /// <remarks>
