@@ -5,7 +5,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
     main {
-        margin-top: 0;
+        margin-top: -30px;
         position: relative;
         z-index: 1;
         background: #AED3EF;
@@ -13,7 +13,10 @@
         margin-left: -30px;
     }
 
-    .slider-wrapper { position: relative; width: 100%; }
+    .slider-wrapper { 
+        position: relative; 
+        width: 100%; 
+    }
 
     @keyframes bannerChange {
         0%, 45%  { transform: translateX(0%); }
@@ -47,7 +50,8 @@
         color: white; text-align: center; z-index: 3;
         text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
-    .slider-text h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0; }
+    .slider-text h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0; color: #b9e0fe; }
+    .slider-text h2 { font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; margin-top: 20px; }
 
     .slider-logo {
         position: absolute; top: 2rem; left: 50%;
@@ -252,7 +256,8 @@
         <img src="/Images/LogoFull.png" alt="LogoFull" class="slider-logo" />
 
         <div class="slider-text">
-            <h1>Water for the people.</h1>
+            <h1>Cabuyao Water District</h1>
+            <h2>Customer Portal</h2>
         </div>
 
         <div class="slider-nav">
@@ -283,7 +288,7 @@
     <div class="about-inner">
         <p class="about-bio">About Us</p>
         <p class="about-tagline">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+            The year is 2003. Thirty years after Presidential Decree 198 was passed into law, Cabuyao Water District was formed amidst the growing need for a sustainable supply of potable and reasonably priced water.   The formation of CABWAD could not come in a much better time.  The demand for potable water is at its peak and the clamor for an efficient water service provider is being voiced out by every sector of the society.  Consequently, CABWAD was formed.
         </p>
     </div>
 </section>

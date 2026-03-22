@@ -30,6 +30,7 @@
             width: 100vw;
             left: 50%;
             margin-left: -50vw;
+            margin-top: -30px;
         }
         .proj-hero::before {
             content: '';
@@ -401,7 +402,7 @@
     <!--HERO-->
     <div class="proj-hero">
         <h1>Our Projects</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Explore our ongoing and completed initiatives aimed at improving water supply, expanding coverage, and enhancing service quality for our community. Each project highlights our commitment to providing safe, reliable, and sustainable water for all residents.</p>
     </div>
 
     <!--STATS BAR-->
