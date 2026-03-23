@@ -272,5 +272,9 @@ namespace GROUP01_MP_Mockup.Pages.Users
                 pnlNoAnnouncements.Visible = true;
             }
         }
+        protected void btnViewAnalytics_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Users/UserAnalytics.aspx");
+        }
     }
 }
