@@ -56,7 +56,7 @@
     .slider-logo {
         position: absolute; top: 2rem; left: 50%;
         transform: translateX(-50%); z-index: 4;
-        max-width: 200px; height: auto; pointer-events: none;
+        max-width: 500px; height: auto; pointer-events: none;
     }
 
     @keyframes bounceDown {
