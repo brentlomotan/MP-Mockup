@@ -17,7 +17,7 @@
         position: relative; 
         width: 100%; 
     }
-
+    
     @keyframes bannerChange {
         0%, 45%  { transform: translateX(0%); }
         50%, 95% { transform: translateX(-100%); }

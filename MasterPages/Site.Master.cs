@@ -30,12 +30,12 @@ namespace GROUP01_MP_Mockup
                 HomeTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("fullareaanalytics"))
+            if (path.Contains("fullareanalytics"))
             {
-                ProjectsTab.Attributes["class"] += " active";
+                AnalyticsTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("user"))
+            if (path.Contains("userdashboard") || path.Contains("bills") || path.Contains("transactions") || path.Contains("processtransaction"))
             {
                 DashboardTab.Attributes["class"] += " active";
             }
@@ -45,7 +45,6 @@ namespace GROUP01_MP_Mockup
             {
                 pnlLogin.Visible = false;
                 pnlProfile.Visible = true;
-                pnlRegisterLink.Visible = false;
 
                 string username = Session["User"].ToString();
                 lblUsername.Text = username;
@@ -66,6 +65,11 @@ namespace GROUP01_MP_Mockup
                     HomeTab.HRef = "~/Pages/Admin/AdminPanel.aspx";
                     ProjectsTab.HRef = "~/Pages/Admin/FullAreaAnalytics.aspx";
                     ProjectsTabText.InnerText = "Full Area Analytics";
+                    ProjectsTabText.InnerText = "Projects";
+                    ProjectsTab.HRef = "~/Pages/Projects/Projects.aspx";
+                    AnalyticsTab.Style["display"] = "flex";
+                    if (path.Contains("fullareanalytics"))
+                        AnalyticsTab.Attributes["class"] += " active";
                 }
 
                 if (!IsPostBack)
@@ -80,6 +84,11 @@ namespace GROUP01_MP_Mockup
                     pnlLogin.Visible = true;
                     pnlProfile.Visible = false;
                 }
+            }
+            else
+            {
+                pnlLogin.Visible = true;
+                pnlProfile.Visible = false;
             }
         }
 
