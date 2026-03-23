@@ -16,7 +16,14 @@ namespace GROUP01_MP_Mockup.Pages.Auth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["User"] != null && Session["Role"] != null)
+            {
+                if (Session["Role"].ToString() == "Admin")
+                    Response.Redirect("~/Pages/Admin/AdminPanel.aspx");
+                else
+                    Response.Redirect("~/Pages/Users/UserDashboard.aspx");
+                return;
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

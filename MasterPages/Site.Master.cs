@@ -45,6 +45,7 @@ namespace GROUP01_MP_Mockup
             {
                 pnlLogin.Visible = false;
                 pnlProfile.Visible = true;
+                pnlRegisterLink.Visible = false;
 
                 string username = Session["User"].ToString();
                 lblUsername.Text = username;

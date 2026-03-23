@@ -533,7 +533,9 @@
 
             <!-- TOP AREA - MISC BUTTONS -->
             <div class="header-nav-links">
-                <a href="~/Pages/Auth/Signup.aspx" runat="server">Register</a>
+                <asp:Panel ID="pnlRegisterLink" runat="server" Visible="true" style="display:contents;">
+                    <a href="~/Pages/Auth/Signup.aspx" runat="server">Register</a>
+                </asp:Panel>
                 <a href="~/Pages/Landing/Default.aspx" runat="server">About Us</a>
                 <a href="javascript:void(0);" onclick="openContactPopup()">Contact Us</a>
             </div>
